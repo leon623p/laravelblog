@@ -81,9 +81,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Welcome everyone!
-                    <p>This is the begging of your laravel journey</p>
+                    Contact Me!
                 </div>
+                <div><p>to email me its leonlight@icloud.com</p></div>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>

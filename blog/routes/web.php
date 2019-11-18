@@ -22,6 +22,8 @@ Route::get('about', 'pagesController@getAbout');
 Route::get('/', 'pagesController@getIndex');
 Route::resource('posts', 'PostController');
 
+route::resource('categories', 'CategoryController', ['except' => ['create']]);
+
 
 
 

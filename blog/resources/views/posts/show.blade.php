@@ -12,8 +12,14 @@
    <div class="well">
    <dl class="dl-horizontal">
    <label>URL:</label>
-   <p><a href="{{ route('posts.single', $post->slug)}}">{{ route('posts.single', $post->slug)}}</a></p>
+   <p><a href="{{ route('blog.single', $post->slug)}}">{{ route('blog.single', $post->slug)}}</a></p>
    </dl>
+
+   <dl class="dl-horizontal">
+   <label>Category</label>
+   <p>{{is_null($post->category) ? '' : $post->category->name}}</p>
+   </dl>
+
    <dl class="dl-horizontal">
    <label>Created At:</label>
    <p>{{ date('M j, Y H:i', strtotime($post->created_at))}}</p>

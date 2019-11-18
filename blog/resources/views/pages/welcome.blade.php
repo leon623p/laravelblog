@@ -13,40 +13,24 @@
     </div>
     <div class="row">
         <div class="col-md-8">
+        @foreach($posts as $post)
+
         <div class="post">
-        <h3>Post title</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid expedita eligendi, assumenda dignissimos ex amet! Corporis, quisquam impedit magni nulla dolores neque natus a eligendi numquam, harum molestias iure dolorem!...</p>
-        <a href='#' class="btn btn-primary">Read More</a>
+        <h3>{{ $post->title}}</h3>
+        <p> {{ substr($post->body, 0, 300) }} {{strlen($post->body) > 300 ? "..." : ""}}</p>
+        <a href="{{ url('blog/' .  $post->slug) }}"  class="btn btn-primary">Read More</a>
         </div>
+        
         <hr>
-        <div class="post">
-        <h3>Post title</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid expedita eligendi, assumenda dignissimos ex amet! Corporis, quisquam impedit magni nulla dolores neque natus a eligendi numquam, harum molestias iure dolorem!...</p>
-        <a href='#' class="btn btn-primary">Read More</a>
-        </div>
-        <hr>
-        <div class="post">
-        <h3>Post title</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid expedita eligendi, assumenda dignissimos ex amet! Corporis, quisquam impedit magni nulla dolores neque natus a eligendi numquam, harum molestias iure dolorem!...</p>
-        <a href='#' class="btn btn-primary">Read More</a>
-        </div>
-        <hr>
-        <div class="post">
-        <h3>Post title</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid expedita eligendi, assumenda dignissimos ex amet! Corporis, quisquam impedit magni nulla dolores neque natus a eligendi numquam, harum molestias iure dolorem!...</p>
-        <a href='#' class="btn btn-primary">Read More</a>
-        </div>
+       
+       @endforeach
+
         </div>
         <div class="col-md-3 col-md-offset-1">
         <h2>Sidebar</h2> 
         </div>
     </div>
-    @endsection
+    
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  </body>
-</html>
+    @endsection

@@ -8,6 +8,11 @@
 <div class="col-md-8">
 {{form::label('title', 'Title:')}}
 {{ Form::text('title', null, ["class" => 'form-control input-lg'])}}
+
+{{form::label('slug', 'Slug:', ['class' => 'form-spacing-top'])}}
+{{ Form::text('slug', null, ["class" => 'form-control'])}}
+
+
 {{form::label('body', 'Body:', ['class' => 'form-spacing-top'])}}
   {{ Form::textarea('body', null, ['class' => 'form-control'])}}
    </div>

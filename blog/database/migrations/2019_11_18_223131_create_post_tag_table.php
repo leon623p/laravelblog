@@ -15,12 +15,14 @@ class CreatePostTagTable extends Migration
     {
         Schema::create('post_tag', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->biginteger('post_id')->unsigned();
+            $table->Biginteger('post_id')->unsigned();
             $table->foreign('post_id')->references('id')->on('posts');
-            $table->biginteger('tag_id')->unsigned();
+            $table->Biginteger('tag_id')->unsigned();
             $table->foreign('tag_id')->references('id')->on('tags');
         });
     }
+
+    
 
     /**
      * Reverse the migrations.

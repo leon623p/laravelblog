@@ -4,6 +4,8 @@
 
 @section('stylesheets')
 <link rel="stylesheet" type="text/css" href=/css/parsley.css>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+
 @endsection
 
 @section('content')
@@ -28,6 +30,17 @@
 
     </select>
 
+    {{ Form::label('tags', 'Tags:') }}
+    <select name="tags[]" class="form-control select2-multi" multiple="multiple">
+
+    @foreach($tags as $tag)
+    <option value='{{$tag->id}}'>{{$tag->name}}</option>
+    @endforeach
+
+    </select>
+
+
+
     {{form::label('body', 'Post Body:')}}
     {{form::textarea('body', null, array('class' => 'form-control', 'required' => ''))}}
 
@@ -43,6 +56,10 @@
 
 @section('scripts')
 <script src="http://parsleyjs.org/dist/parsley.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+<script type="text/javascript"> 
+    $('.select2-multi').select2();
+</script>
 @endsection
 
 

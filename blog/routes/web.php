@@ -23,6 +23,8 @@ Route::get('/', 'pagesController@getIndex');
 Route::resource('posts', 'PostController');
 
 route::resource('categories', 'CategoryController', ['except' => ['create']]);
+route::resource('tags', 'TagController', ['except' => ['create']]);
+
 
 
 

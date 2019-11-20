@@ -3,15 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Tag;
+use App\Comment;
+use App\Post;
 use Session;
 
-class TagController extends Controller
+class CommentsController extends Controller
 {
-    public function __construct() {
-        $this->middleware('auth');
-    }
-    
     /**
      * Display a listing of the resource.
      *
@@ -19,8 +16,17 @@ class TagController extends Controller
      */
     public function index()
     {
-        $tags = Tag::all();
-        return view('tags.index')->withTags($tags);
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -29,16 +35,28 @@ class TagController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $post_id)
     {
-    $this->validate($request, ['name' => 'required|max:255']);
-    $tag = new Tag;
-    $tag->name = $request->name;
-    $tag->save();
+     $this->validate($request, array(
+         'name' => 'required|max:255',
+         'email' => 'required|email|max:255',
+         'comment' => 'required|min:5|max:2000'
+     ));
 
-    Session::flash('success', 'New Tag was successfully created!');
+     $post = Post::find($post_id);
 
-    return redirect()->route('tags.index');
+     $comment = new Comment();
+     $comment->name = $request->name;
+     $comment->email = $request->email;
+     $comment->comment = $request->comment;
+     $comment->approved = true;
+     $comment->post()->associate($post);
+
+     $comment->save();
+
+     Session::flash('success', 'Comment was added');
+
+     return redirect()->route('blog.single', [$post->slug]);
     }
 
     /**
@@ -49,8 +67,8 @@ class TagController extends Controller
      */
     public function show($id)
     {
-        $tag = Tag::find($id);
-    return view('tags.show')->withTags($tag);    }
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -60,8 +78,7 @@ class TagController extends Controller
      */
     public function edit($id)
     {
-        $tag = Tag::find($id);
-        return view('tags.edit')->withTag($tag);
+        //
     }
 
     /**
@@ -73,14 +90,7 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tag = Tag::find($id);
-
-        $this->validate($request, ['name' => 'required|max:255']);
-
-        $tag->name = $request->name;
-        $tag->save();
-        Session::flash('success', 'Successfully saved the tag');
-        return redirect()->route('tags.show', $tag->id);
+        //
     }
 
     /**
@@ -91,12 +101,6 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        $tag = Tag::find($id);
-        $tag->posts()->detach();
-
-        $tag->delete();
-        Session::flash('success', 'Successfully deleted the tag');
-
-        return redirect()->route('tags.index');
+        //
     }
 }

@@ -18,12 +18,14 @@ Route::get('blog/{slug}',  ['as' => 'blog.single', 'uses' => 'BlogController@get
  ->where('slug', '[\w\d\-\_]+');
 Route::get('blog', ['uses' => 'BlogController@getIndex', 'as' => 'blog.index']);
 Route::get('contact', 'pagesController@getContact'); 
+Route::post('contact', 'pagesController@postContact'); 
 Route::get('about', 'pagesController@getAbout');
 Route::get('/', 'pagesController@getIndex');
 Route::resource('posts', 'PostController');
 
 route::resource('categories', 'CategoryController', ['except' => ['create']]);
 route::resource('tags', 'TagController', ['except' => ['create']]);
+route::post('comments/{post_id}', ['uses' => 'CommentsController@store', 'as' => 'comments.store']);
 
 
 

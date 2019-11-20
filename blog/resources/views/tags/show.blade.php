@@ -7,8 +7,14 @@
  <div class="col-md-8">
  <h1>{{$tags->name}} Tag <small>{{$tags->posts()->count()}} Posts</small></h1>
  </div>
- <div class="col-md-2 col-md-offer-2">
+ <div class="col-md-2">
  <a href=" {{ route('tags.edit', $tags->id) }} " class="btn btn-block  btn-primary pull-right" style="margin-top:20px">Edit</a>
+ 
+ </div>
+ <div class="col-md-2">
+ {{ Form::open(['route' => ['tags.destroy', $tags->id], 'method' => 'DELETE'])}}
+{{Form::submit('Delete', ['class' => 'btn btn-danger btn-block', 'style' => 'margin-top:20px']) }}
+ {{Form::close() }}
  
  </div>
  </div>

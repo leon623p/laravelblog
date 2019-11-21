@@ -5,6 +5,15 @@
 @section('stylesheets')
 <link rel="stylesheet" type="text/css" href=/css/parsley.css>
 <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.tiny.cloud/1/3tu1nilfbrqjjmz5rmc73yrt7nc0oczoun099uuc8czeo73g/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>tinymce.init({ 
+      selector:'textarea',
+      plugin: 'link code',
+      menubar: false
+ });</script>
+
+ 
+
 
 @endsection
 

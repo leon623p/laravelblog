@@ -8,7 +8,8 @@
 <script src="https://cdn.tiny.cloud/1/3tu1nilfbrqjjmz5rmc73yrt7nc0oczoun099uuc8czeo73g/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
   <script>tinymce.init({ 
       selector:'textarea',
-      plugin: 'link code',
+      plugins: "link",
+      toolbar: " undo redo |styleselect||bold italic strikethrough | alignleft aligncenter  alignright alignjustify| | outdent indent| |link image",
       menubar: false
  });</script>
 
@@ -23,7 +24,7 @@
     <div class="col-md-8 col-md-offset-2">
     <h1>Create New Post</h1>
     <hr>
-    {!! Form::open(['route' => 'posts.store', 'data-parsley-validate' => '']) !!}
+    {!! Form::open(['route' => 'posts.store', 'data-parsley-validate' => '', 'files' => true]) !!}
     {{Form::label('title', 'Title:')}}
     {{Form::text('title', null, array('class' => 'form-control', 'required' =>'', 'maxlength' => '255'))}}
 
@@ -48,10 +49,11 @@
 
     </select>
 
-
+{{Form::label('feature_image', 'Upload Featured Image:')}}
+{{Form::file('featured_image') }}
 
     {{form::label('body', 'Post Body:')}}
-    {{form::textarea('body', null, array('class' => 'form-control', 'required' => ''))}}
+    {{form::textarea('body', null, array('class' => 'form-control'))}}
 
 
     {{form::submit('Create Post', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px'))}}

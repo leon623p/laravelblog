@@ -7,7 +7,9 @@
 <script src="https://cdn.tiny.cloud/1/3tu1nilfbrqjjmz5rmc73yrt7nc0oczoun099uuc8czeo73g/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
   <script>tinymce.init({ 
       selector:'textarea',
-      plugin: 'link code',
+      plugins: "link",
+  toolbar: " undo redo |styleselect||bold italic strikethrough | alignleft aligncenter  alignright alignjustify| | outdent indent| |link image",
+  link_context_toolbar: true,
       menubar: false
  });</script>
 
@@ -15,7 +17,7 @@
 
 @section('content')
 <div class="row">
-{!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT']) !!}
+{!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT', 'files' => true]) !!}
 <div class="col-md-8">
 {{form::label('title', 'Title:')}}
 {{ Form::text('title', null, ["class" => 'form-control input-lg'])}}
@@ -29,7 +31,8 @@
 {{ Form::label('tags', "Tags:", ['class' => 'form-spacing-top']) }}
 {{ Form::select('tags[]', $tags, null, ['class' => 'form-control select2-multi', 'multiple' => 'multiple'])}}
 
-
+{{Form::label('feature_image', 'Update Featured Image:', ['class' => 'form-spacing-top'])}}
+{{Form::file('featured_image')}}
 
 {{form::label('body', 'Body:', ['class' => 'form-spacing-top'])}}
   {{ Form::textarea('body', null, ['class' => 'form-control'])}}

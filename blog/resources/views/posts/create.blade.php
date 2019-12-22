@@ -28,7 +28,7 @@
     {{Form::label('title', 'Title:')}}
     {{Form::text('title', null, array('class' => 'form-control', 'required' =>'', 'maxlength' => '255'))}}
 
-    {{form::label('slug', 'Slug:')}}
+    {{form::label('slug', 'Custom Url:')}}
     {{form::text('slug', null, array('class' => 'form-control', 'required' => '', 'minlength' => '5', 'maxlength' => '255'))}}
 
     {{ Form::label('category_id', 'Category:') }}

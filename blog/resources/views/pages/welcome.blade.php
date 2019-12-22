@@ -5,9 +5,9 @@
     <div class="row">
     <div class="col-md-12">
     <div class="jumbotron">
-  <h1>Welcome to My Blog!</h1>
-  <p class="lead"> Thank you so much for visting. This is a project to help my learn laravel. Hopefully you enjoy my posts</p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Posts</a></p>
+  <h1>Welcome to Leon's Blog!</h1>
+  <p class="lead"> Thank you so much for visting. This is a project to help me learn laravel. Hopefully you enjoy my posts</p>
+  <p><a class="btn btn-primary btn-lg" href="{{url('blog/')}}" role="button">Posts</a></p>
 </div>
     </div>
     </div>
@@ -26,9 +26,9 @@
        @endforeach
 
         </div>
-        <div class="col-md-3 col-md-offset-1">
+        <!-- <div class="col-md-3 col-md-offset-1">
         <h2>Sidebar</h2> 
-        </div>
+        </div> -->
     </div>
     
     </div>

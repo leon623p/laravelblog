@@ -23,6 +23,7 @@ Route::get('about', 'pagesController@getAbout');
 Route::get('/', 'pagesController@getIndex');
 Route::resource('posts', 'PostController');
 
+
 route::resource('categories', 'CategoryController', ['except' => ['create']]);
 route::resource('tags', 'TagController', ['except' => ['create']]);
 route::post('comments/{post_id}', ['uses' => 'CommentsController@store', 'as' => 'comments.store']);
@@ -36,6 +37,7 @@ Route::get('comments/{id}/delete', ['uses' => 'CommentsController@delete', 'as' 
 
 
 
-Auth::routes();
+
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'pagesController@getIndex')->name('home');

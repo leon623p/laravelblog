@@ -13,7 +13,7 @@
     <h1>{{$post->title}}</h1>
     <p> {!! $post->body !!}</p>
     <hr>
-    <p>Posted In: {{$post->Category->name}}</p>
+    <p>Posted In: {{is_null($post->category) ? '' : $post->category->name}}</p>
     </div>
 </div>
 

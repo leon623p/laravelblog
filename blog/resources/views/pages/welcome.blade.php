@@ -6,7 +6,7 @@
     <div class="col-md-12">
     <div class="jumbotron">
   <h1>Welcome to Leon's Blog!</h1>
-  <p class="lead"> Thank you so much for visting. This is a project to help me learn laravel. Hopefully you enjoy my posts</p>
+  <p class="lead"> Hey Thanks for checking out my blog. I hope you enjoy my posts. </p>
   <p><a class="btn btn-primary btn-lg" href="{{url('blog/')}}" role="button">Posts</a></p>
 </div>
     </div>

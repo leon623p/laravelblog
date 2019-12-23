@@ -71,8 +71,3 @@ hr.footer {
     color: #555;
     background-color: lavenderblush;
 }
-
-.navbar-default .navbar-nav > a:hover {
-    color: red;
-    background-color: red;
-}

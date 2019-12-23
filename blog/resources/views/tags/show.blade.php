@@ -13,7 +13,7 @@
  </div>
  <div class="col-md-2">
  {{ Form::open(['route' => ['tags.destroy', $tags->id], 'method' => 'DELETE'])}}
-{{Form::submit('Delete', ['class' => 'btn btn-danger btn-block', 'style' => 'margin-top:20px']) }}
+{{Form::submit('Delete', ['class' => 'btn btn-m-margin btn-danger btn-block']) }}
  {{Form::close() }}
  
  </div>

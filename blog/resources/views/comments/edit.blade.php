@@ -14,7 +14,7 @@
 {{Form::label('comment', 'Comment:')}}
 {{Form::textarea('comment', null, ['class' => 'form-control'])}}
 
-{{Form::submit('Update Comment', ['class' => 'btn btn-block btn-success', 'style' => 'margin-top: 15px'])}}
+{{Form::submit('Update Comment', ['class' => 'btn btn-sm-margin btn-block btn-success'])}}
 
 {{Form::close()}}</div>
 </div>

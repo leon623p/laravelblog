@@ -20,7 +20,7 @@ class BlogController extends Controller
     }
 
 
-
+ 
 }
 
 

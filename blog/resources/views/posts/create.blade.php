@@ -56,7 +56,7 @@
     {{form::textarea('body', null, array('class' => 'form-control'))}}
 
 
-    {{form::submit('Create Post', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px'))}}
+    {{form::submit('Create Post', array('class' => 'btn btn-sm-margin btn-success btn-lg btn-block'))}}
 
 {!! Form::close() !!}
 

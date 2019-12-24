@@ -1,3 +1,10 @@
+body {
+    background-image: url("/images/Abstract Blue Wallpapers.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
 .btn-h1-spacing {
     margin-top: 18px;
 }
@@ -53,10 +60,6 @@
 
 .btn-m-margin {
     margin-top: 20px;
-}
-
-body {
-    background-image: url("/images/Abstract Blue Wallpapers.jpg");
 }
 
 hr.footer {

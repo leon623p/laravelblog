@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
 use Session;
-use App\tag;
+use App\Tag;
 use Purifier;
 use Image;
 use Storage;

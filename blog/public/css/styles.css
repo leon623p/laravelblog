@@ -1,5 +1,12 @@
-body {
+/* body {
     background-image: url("/images/Abstract Blue Wallpapers.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+} */
+
+body {
+    background-color: Gainsboro;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
